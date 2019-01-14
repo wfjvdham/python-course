@@ -1,5 +1,3 @@
-# Python course
-
 # Python
 
 > Python is an interpreted, high-level, general-purpose programming language
@@ -9,12 +7,12 @@
 - Python 3
 - Dynamically-typed
 
-# Installation
+## Installation
 
 - [Miniconda](https://conda.io/miniconda.html)
 - [Anaconda](https://www.anaconda.com/download)
 
-# Important Packages
+## Important Packages
 
 ```
 conda install numpy pandas scikit-learn matplotlib seaborn jupyter
@@ -40,3 +38,7 @@ jupyter notebook
 
 `;` at the end of a line means do not show the output
 `!` before a command executes that command in the system shell
+
+# Style Guide 
+
+[style guide](https://www.python.org/dev/peps/pep-0008/)
