@@ -78,3 +78,7 @@ python test.py
 # Style Guide 
 
 [style guide](https://www.python.org/dev/peps/pep-0008/)
+
+# Structure
+
+![structure](./r_workflow.jpg)
