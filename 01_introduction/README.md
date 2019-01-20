@@ -77,6 +77,9 @@ python test.py
 
 # Style Guide 
 
+- Never use semicolons
+- Whitespace is important
+
 [style guide](https://www.python.org/dev/peps/pep-0008/)
 
 # Structure
