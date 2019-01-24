@@ -133,11 +133,11 @@ print(maximum(2, 3))
 
 letter_list = ['a', 'b', 'c']
 
-# tuple, less functionality un mutable
+# tuple, less functionality and not changeable
 
 letter_tuple = ('a', 'b', 'c')
 
-# dictionary
+# dictionary, key and value
 
 emails = {
     'wim': 'wfjvdham@gmail.com',
@@ -145,6 +145,7 @@ emails = {
     'kees': 'kees@yahoo.com',
 }
 
+print(emails['wim'])
 
 for name, address in emails.items():
     print('Contact {} at {}'.format(name, address))

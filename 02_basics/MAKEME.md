@@ -22,6 +22,26 @@
 1. Use the list of vehicles to write an advertisement. So that it prints something like: "Amazing Joe's Garage, we service cars, motorbikes, caravans and bikes.". (Hint: use a for loop.) The output should be correct English with all the punctuation in place (that's the challenge). So plurals for the vehicle types, commas followed by a single space, the word and to replace the final comma and closed off by a period.
 1. What if you add one more vehicle to the list, can you have that added to the advertisement without changing the code of the previous question?
 
+# Lists
+
+1. Create a list like `a = [2, 6, 9, 4, 1]` and use the following functions on the list and check the results:
+
+    - `a.sort()`
+    - `a.append(5)`
+    - `a.pop()`
+    
+1. Create a list like `a = [2, [6, 9], 1]`. Make a copy of the list using the following 3 methods:
+
+    1. `b = a`
+    1. `b = a[:]`
+    1. `b = a.copy()`
+    1.  Using the copy library:      
+            
+            import copy
+            b = copy.deepcopy(a)
+1. Change the first value in `a` `a[0] = 0` and see what happens to `b`
+1. Change a value in the sublist of `a` `a[1][0] = 0` and see what happens to `b`
+
 # Dictionary
 
 1. Create a dictionary with some countries and their capitals.
