@@ -4,7 +4,7 @@
 
 - Code completion
 - Debugger
-- Testing evironment
+- Testing environment
 - Version Control
 
 **But**
@@ -18,6 +18,6 @@ File -> New Project...
 
 **Select Interpreter** the python installation you want to use to run this project
 
-New -> Python File
+For running the current file press: 
 
-**Set Run/Debug Configuration** can use a template where you anly need to select the path to the python file you want to run
+<kbd>`Ctrl`</kbd> + <kbd>`Shift`</kbd> + <kbd>`F10`</kbd>
