@@ -1,4 +1,3 @@
-
 1. Make a `person` class that contains the following attributes and functions:
       - `name` array with a first and last name
       - `age`  
@@ -13,3 +12,7 @@ To do this you first have to define a `name` class.
 1. Give the teacher class a new `greeting` function that introduces the name and the `subject` of the teacher.
 1. Create a new class Address and let all the persons and teachers have an address. Try to see if it is possible to have
  two teachers living on the same address and see what happens if one of them moves.
+ 
+# Extra Assignment
+
+Create a wiebetaaltwat like application. 
