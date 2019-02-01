@@ -28,6 +28,24 @@ for idx, vehicle in enumerate(vehicles):
 print(result)
 
 
+def add_10(n):
+    return n + 10
+
+
+a = 5
+a = add_10(a)
+print(a)
+
+
+def add_10_list(mylist):
+    mylist.append(10)
+
+
+alist = [3, 5, 9]
+add_10_list(alist)
+print(alist)
+
+
 def calculations(initial_number, **calculations_dict):
     for key, value in calculations_dict.items():
         if key == 'add':

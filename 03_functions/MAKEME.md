@@ -7,6 +7,8 @@
 1. Change the function `vehicle_type()` to use the list of the previous question. So that `vehicle_type("green", 3)` prints out "a green bike".
 1. Use the list of vehicles to write an advertisement. So that it prints something like: "Amazing Joe's Garage, we service cars, motorbikes, caravans and bikes.". (Hint: use a for loop.) The output should be correct English with all the punctuation in place (that's the challenge). So plurals for the vehicle types, commas followed by a single space, the word and to replace the final comma and closed off by a period.
 1. What if you add one more vehicle to the list, can you have that added to the advertisement without changing the code of the previous question?
+1. Create a function that increases a number with 10. Use this function in a program and print the result.
+1. Create a function that adds the element `[10]` to a list. Use this function in a program and print the result.
 
 # Kwargs
 

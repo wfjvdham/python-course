@@ -54,6 +54,30 @@ def maximum(x, y):
 
 print(maximum(2, 3))
 
+# mutable vs unmutable
+
+
+def changeme(mylist):
+    mylist.append([1, 2, 3])
+    print("List inside the function: ", mylist)
+    return
+
+
+mylistouter = [10, 20, 30]
+changeme(mylistouter)
+print("List outside the function: ", mylistouter)
+
+
+def increaseme(n):
+    n = n + 10
+    print('Inside the function: ', n)
+    return
+
+
+b = 5
+increaseme(b)
+print('Outside the function: ', b)
+
 # *args and **kwargs
 
 
