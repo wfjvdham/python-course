@@ -18,4 +18,4 @@ jupyter notebook
 
 # Structure
 
-![structure](./r_workflow.jpg)
+![structure](r_workflow.jpg)
