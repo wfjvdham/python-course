@@ -37,9 +37,9 @@ Master Human Media Interaction
 
 # Script files
 
-[PyCharm](https://www.jetbrains.com/pycharm/)
-[Sublime Text](https://www.sublimetext.com/)
-[Spyder](https://www.spyder-ide.org/) comes with Anaconda
+- [PyCharm](https://www.jetbrains.com/pycharm/)
+- [Sublime Text](https://www.sublimetext.com/)
+- [Spyder](https://www.spyder-ide.org/) comes with Anaconda
 
 ```
 python test.py
