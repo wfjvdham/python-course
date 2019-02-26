@@ -21,6 +21,8 @@ for task in tasks:
 
 task_names = [task['name'] for task in tasks]
 
+
+
 difficult_tasks = []
 for task in tasks:
     if task['duration'] >= 120:
@@ -28,5 +30,5 @@ for task in tasks:
 
 difficult_tasks = [task['name'] for task in tasks if task['duration'] >= 120]
 
-result = [x ** y for x in [10, 20, 30] for y in [2, 3, 4]]
+result = [x ** y for x in [10, 20, 30] for y in [2, 3, 4] if y > 3 and x < 20]
 print(result)
