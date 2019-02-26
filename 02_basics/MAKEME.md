@@ -35,5 +35,4 @@
 # Dictionary
 
 1. Create a dictionary with some countries and their capitals.
-1. Write a function that receives a country as an argument and prints the capital if present in the dictionary. Otherwise it prints 'No info available'
 1. Write a loop that creates a dictionary with as keys the numbers 1 till 10. And as values the key to the power 2.

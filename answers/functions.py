@@ -9,15 +9,23 @@ def color_car(color):
     print(f'A {color} car')
 
 
-color_car('red')
+color_car('blue')
 
 
 def vehicle_type(color, code, vehicles_options):
-        print(f'A {color} {vehicles_options[code]}')
+    print(f'A {color} {vehicles_options[code]}')
 
 
 vehicles = ['car', 'motorbike', 'bike', 'caravan']
 vehicle_type("blue", 2, vehicles)
+
+result = "Amazing Joe's Garage, we service "
+for idx in range(0, len(vehicles)):
+    if idx == len(vehicles) - 1:
+        result = result[:-2] + ' and ' + vehicles[idx] + 's.'
+    else:
+        result += vehicles[idx] + 's, '
+print(result)
 
 result = "Amazing Joe's Garage, we service "
 for idx, vehicle in enumerate(vehicles):
@@ -45,6 +53,22 @@ alist = [3, 5, 9]
 add_10_list(alist)
 print(alist)
 
+capitals = {
+    'France': 'Paris',
+    'Belgium': 'Brussels',
+    'Germany': 'Berlin',
+}
+
+
+def get_capital(country):
+    if country in capitals:
+        print(capitals[country])
+    else:
+        print('No info available')
+
+
+get_capital('France')
+get_capital('England')
 
 def calculations(initial_number, **calculations_dict):
     for key, value in calculations_dict.items():

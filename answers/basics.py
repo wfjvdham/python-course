@@ -28,17 +28,6 @@ capitals = {
     'Germany': 'Berlin',
 }
 
-
-def get_capital(country):
-    if country in capitals:
-        print(capitals[country])
-    else:
-        print('No info available')
-
-
-get_capital('France')
-get_capital('England')
-
 d = dict()
 d = {}
 for x in range(1, 11):

@@ -9,6 +9,7 @@
 1. What if you add one more vehicle to the list, can you have that added to the advertisement without changing the code of the previous question?
 1. Create a function that increases a number with 10. Use this function in a program and print the result.
 1. Create a function that adds the element `[10]` to a list. Use this function in a program and print the result.
+1. Write a function that receives a country as an argument and prints the capital if present in the dictionary. Otherwise it prints 'No info available'
 
 # Kwargs
 
