@@ -7,7 +7,7 @@ while True:
         elif birth_year_int < 1909:
             raise Exception('You cannot be older than 100')
         else:
-            raise Exception('Your age is', 2019 - birth_year_int)
+            print('Your age is', 2019 - birth_year_int)
             break
     except Exception as e:
         print('There was this problem: ', e.args[0])
