@@ -19,8 +19,8 @@ try:
     a/b
 except Exception:
     print('This is not allowed')
-else:
-    print('Success')
+finally:
+    print('Runs always')
 ```
 
 Or if you want to show the message inside the exception:
@@ -33,6 +33,6 @@ try:
     a/b
 except Exception as e:
     print('This is not allowed, because: ', e.args)
-else:
-    print('Success')
+finally:
+    print('Runs always')
 ```
