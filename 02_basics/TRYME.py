@@ -22,6 +22,8 @@ print('Why is {name} playing with that python?'.format(name=name))
 print(f'{name} was {age} years old when he wrote this book')
 print(f'Why is {name} playing with that python?')
 
+print('Why is {0} playing with that python?' % name)
+
 # Operators
 
 print(3+5)
@@ -37,7 +39,7 @@ print(3 % 5)
 # if
 
 number = 23
-guess = 5
+guess = 23
 
 if guess == number:
     # New block starts here
@@ -71,7 +73,6 @@ for letter in letter_list:
 for idx, letter in enumerate(letter_list):
     print('element: ' + letter + ' at index: ' + str(idx))
 
-
 # data structures
 
 # list
@@ -93,4 +94,4 @@ emails = {
 print(emails['wim'])
 
 for name, address in emails.items():
-    print('Contact {} at {}'.format(name, address))
+    print('Contact: {} email: {}'.format(name, address))
