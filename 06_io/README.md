@@ -19,7 +19,13 @@ Using the `open()` function, which can have some of the following modes:
 
 Using the `pickle` module you can store and retrieve any python object in a binary file format. Add a **b** to the `open()` function.
 
-`open("file.data", "wb")
+```
+f = open("file.data", "wb")
+
+pickle.dump(data, f)
+data = pickle.load(f)
+```
+
 
 ## DB API
 
