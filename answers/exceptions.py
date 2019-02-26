@@ -3,11 +3,11 @@ while True:
     try:
         birth_year_int = int(birth_year)
         if birth_year_int > 2019:
-            print('Your birth year cannot be in the future')
+            raise Exception('Your birth year cannot be in the future')
         elif birth_year_int < 1909:
-            print('You cannot be older than 100')
+            raise Exception('You cannot be older than 100')
         else:
-            print('Your age is', 2019 - birth_year_int)
+            raise Exception('Your age is', 2019 - birth_year_int)
             break
-    except Exception:
-        print('Not a valid integer')
+    except Exception as e:
+        print('There was this problem: ', e.args[0])
