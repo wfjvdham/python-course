@@ -34,5 +34,5 @@ data = pickle.load(f)
 - Compatible with most popular databases (MySQL, PostgreSQL, ...)
 - Each database type has its own module, but implements largely the same functions.
 - Use a `Connection` object for the connection with the database. 
-- Use a `Cursor` object for manipulating the batabase and retrieve the results.
+- Use a `Cursor` object for manipulating the database and retrieve the results.
 
