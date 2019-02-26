@@ -11,7 +11,7 @@ print(f'Hi, I am {name} and I am {age} years old')
 # Control Flow
 
 for i in range(1, 101):
-    if (i % 3 == 0) & (i % 5 == 0):
+    if (i % 3 == 0) and (i % 5 == 0):
         print('Fizz Buzz')
     elif i % 5 == 0:
         print('Buzz')
@@ -40,6 +40,14 @@ get_capital('France')
 get_capital('England')
 
 d = dict()
+d = {}
 for x in range(1, 11):
     d[x] = x ** 2
 print(d)
+
+
+a = [2, [6, 9], 1]
+
+print(a)
+
+a[0:2]
