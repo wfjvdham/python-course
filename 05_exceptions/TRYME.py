@@ -9,11 +9,13 @@ else:
     print('Success')
 
 a = 3
-b = 0
+b = 1
 
 try:
+    if b == 1:
+        raise Exception('b is 1')
     a/b
 except Exception as e:
-    print('This is not allowed, because: ', e.args)
+    print('This is not allowed, because: ', e.args[0])
 else:
     print('Success')
