@@ -10,10 +10,15 @@
 
 Using the `open()` function, which can have some of the following modes:
 
-- **r**, read mode which is used when the file is only being read 
-- **w** for overwriting a file (any existing files with the same name will be erased when this mode is activated) 
+- **r** read mode, which is used when the file is only being read (Default)
+- **w** write mode, for overwriting a file (any existing files with the same name will be erased when this mode is activated) 
 - **a** appending mode, which is used to add new data to the end of the file; that is new information is automatically amended to the end 
 - **r+** for reading and writing a file
+
+Combined with the following file type:
+
+- **t** text file (Default)
+- **b** binary file
 
 ## Pickle
 
