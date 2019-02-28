@@ -9,7 +9,7 @@
 
 ## Concepts
 
-- **Encapsulation** each object keeps its state (variables/ attributes) inside a class together with some functionalities that are typical for this object
+- **Encapsulation** each object keeps its state inside a class together with some functionalities that are typical for this object
 - **Abstraction** hiding unnecessary details from the user
 - **Composition** *has-a* relationship
 - **Inheritance** *is-type-of* relationship, it can use the functions from other objects
@@ -18,7 +18,7 @@
 
 ## Basic Instantiation
 
-```
+```python
 class Person:
     def say_hi(self):
         print('Hello, how are you?')
@@ -31,7 +31,7 @@ p.say_hi()
 
 The __init__ method is run as soon as an object of a class is instantiated (i.e. created). The method is useful to do any initialization (i.e. passing initial values to your object) you want to do with your object.
 
-```
+```python
 class Person:
     def __init__(self, name):
         self.name = name
@@ -47,7 +47,7 @@ p.say_hi()
 
 A teacher is a type of person so when constructing a teacher you call the `Person` `__init__` function.
 
-```
+```python
 class Teacher(Person):
     """Represents a teacher."""
     def __init__(self, name, topic):
@@ -61,7 +61,7 @@ class Teacher(Person):
 
 This class can be used in the following way:
 
-```
+```python
 t = Teacher("Wim", "Python")
 t.say_hi()
 t.tellTopic()
@@ -73,7 +73,7 @@ By default objects are copied *by-reference* which means that the new object sti
 one. So if you change a *Field* of the old object, it is also changed in the new object. If this behaviour is not wanted
 than the `deepcopy()` function from the `copy` library can be used.
 
-```
+```python
 t2 = t
 t2.tellTopic()
 

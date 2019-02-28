@@ -34,4 +34,3 @@ t2.tell_topic()
 t.topic = "java"
 t.tell_topic()
 t2.tell_topic()
-
