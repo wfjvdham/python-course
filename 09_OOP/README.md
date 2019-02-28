@@ -12,7 +12,7 @@
 - **Encapsulation** each object keeps its state (variables/ attributes) inside a class together with some functionalities that are typical for this object
 - **Abstraction** hiding unnecessary details from the user
 - **Composition** *has-a* relationship
-- **Inheritance** *is-type-of* relationship, using the `prototype` it can use the functions from other objects
+- **Inheritance** *is-type-of* relationship, it can use the functions from other objects
 - **Delegation** attributes and methods are accessible by a child object
 - **Polymorphism** when multiple object types implement the same functionality
 
