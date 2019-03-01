@@ -15,11 +15,12 @@ from math import sqrt
 
 # Package
 
-> A package is directory that contains modules
+> A package is a collection of modules
 
-- Useful for providing structure if you have a lot of modules
-- An `__init__.py` file must be present but can be empty (from python 3.3 not necessary anymore)
-- An `setup.py` file must be present in the top directory, contains general information about the package
+A package has the following structure:
+
+- A directory containing all the python code and an `__init__.py` file. The `__init__.py` file is usually empty but is required to tell python this is a package.
+- A `setup.py` file containing general information about the package.
 
 
 # pip (Pip Installs Packages)
