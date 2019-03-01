@@ -41,3 +41,6 @@ data = pickle.load(f)
 - Use a `Connection` object for the connection with the database. 
 - Use a `Cursor` object for manipulating the database and retrieve the results.
 
+## with
+
+The `with` keyword in python is a more compact way to put frequently used operations in a try..finally loop. It uses the `__enter__` and `__exit__` methods on the object that is used. These methods are implemented for the File object and for the different database connectors. No try..finally is needed,  the `__exit__` function is always called to do the cleaning up. See more details [here](http://effbot.org/zone/python-with-statement.htm) and an example in the TRYME file.

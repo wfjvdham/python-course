@@ -96,8 +96,7 @@ conn.close()
 
 # for more compact code use with
 
-conn = sqlite3.connect('example.db')
-with conn:
+with sqlite3.connect('example.db') as conn:
     c = conn.cursor()
     c.execute('SELECT SQLITE_VERSION()')
 
