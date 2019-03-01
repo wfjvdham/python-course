@@ -13,7 +13,6 @@
 - **Abstraction** hiding unnecessary details from the user
 - **Composition** *has-a* relationship
 - **Inheritance** *is-type-of* relationship, it can use the functions from other objects
-- **Delegation** attributes and methods are accessible by a child object
 - **Polymorphism** when multiple object types implement the same functionality
 
 ## Basic Instantiation
@@ -89,4 +88,96 @@ t2.tellTopic()
 t.topic = "java"
 t.tellTopic()
 t2.tellTopic()
+```
+
+## Getters and setters
+
+Recommended is to use simple attributes but if necesary getters and setters are implemented like this:
+
+```python
+class P:
+
+    def __init__(self,x):
+        self.x = x
+
+    @property
+    def x(self):
+        return self.__x
+
+    @x.setter
+    def x(self, x):
+        if x < 0:
+            self.__x = 0
+        elif x > 1000:
+            self.__x = 1000
+        else:
+            self.__x = x
+```
+
+## Abstract classes and Interfaces
+
+- Python implements interfaces in a informal way using [duck typing](https://en.wikipedia.org/wiki/Duck_typing). In duck typing, an object's suitability is determined by the presence of certain methods and properties, rather than the type of the object itself.
+
+```python
+class Duck:
+    def fly(self):
+        print("Duck flying")
+
+class Airplane:
+    def fly(self):
+        print("Airplane flying")
+
+class Whale:
+    def swim(self):
+        print("Whale swimming")
+
+def lift_off(entity):
+    entity.fly()
+
+duck = Duck()
+airplane = Airplane()
+whale = Whale()
+
+lift_off(duck) # prints `Duck flying`
+lift_off(airplane) # prints `Airplane flying`
+lift_off(whale) # Throws the error `'Whale' object has no attribute 'fly'`
+```
+
+- Python can implement abstract classes [link](http://masnun.rocks/2017/04/15/interfaces-in-python-protocols-and-abcs/)
+
+```python
+import abc
+
+class Bird(abc.ABC):
+    @abc.abstractmethod
+    def fly(self):
+        pass
+
+class Parrot(Bird):
+    pass
+
+p = Parrot()
+
+class Parrot2(Bird):
+    def fly(self):
+        print("Flying")
+
+
+p2 = Parrot2()
+isinstance(p2, Bird) # True
+
+class Aeroplane(abc.ABC):
+    @abc.abstractmethod
+    def fly(self):
+        pass
+
+
+class Boeing(Aeroplane):
+    def fly(self):
+        print("Flying!")
+
+b = Boeing()
+
+isinstance(p2, Aeroplane) # False
+isinstance(b, Bird) # False
 ```
