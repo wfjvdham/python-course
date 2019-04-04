@@ -9,3 +9,7 @@
 ## Format
 
 - [Pyformat](https://pyformat.info/)
+
+## Scikit-learn
+
+- [Blog about Pandas and Scikit-learn](https://medium.com/dunder-data/from-pandas-to-scikit-learn-a-new-exciting-workflow-e88e2271ef62)
