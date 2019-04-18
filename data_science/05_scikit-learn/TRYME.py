@@ -4,36 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.linear_model import LinearRegression
 
-rng = np.random.RandomState(42)
-x = 10 * rng.rand(50)
-y = 2 * x - 1 + rng.randn(50)
-
-df = pd.DataFrame({'X': x, 'Y': y})
-print(df)
-
-#sns.lmplot(x='X', y='Y', data=df, fit_reg=False)
-#plt.show()
-
-model = LinearRegression(fit_intercept=True)
-
-model.fit(df['X'].values.reshape(-1, 1),
-          df['Y'].values.reshape(-1, 1))
-print(model.coef_)
-print(model.intercept_)
-
-newx = np.linspace(-1, 11)
-df2 = pd.DataFrame({'newx': newx})
-
-df2['newy'] = model.predict(newx.reshape(-1, 1))
-print(df2)
-
-fig, ax = plt.subplots()
-sns.regplot(x='newx', y='newy', data=df2, fit_reg=False, ax=ax)
-sns.regplot(x='X', y='Y', data=df, fit_reg=False, ax=ax)
-#plt.show()
-
 # predict tip based on total bill and sex
-# https://medium.com/dunder-data/from-pandas-to-scikit-learn-a-new-exciting-workflow-e88e2271ef62
 
 tips = sns.load_dataset('tips')
 
@@ -75,7 +46,7 @@ print(feature_names)
 sex_inv = ohe.inverse_transform(sex_train_transformed)
 print(np.array_equal(sex_inv, sex_train.values))
 
-# if you ahve missing values in the train set
+# if you have missing values in the train set
 
 sex_train.iloc[0, 0] = np.nan
 
@@ -100,3 +71,18 @@ print(sex_train_transformed.shape)
 sex_test = test[['sex']].copy()
 sex_test_transformed = pipe.transform(sex_test)
 print(sex_test_transformed.shape)
+
+from sklearn.linear_model import Ridge
+
+ml_pipe = Pipeline([('transform', pipe), ('ridge', Ridge())])
+ml_pipe.fit(train, y)
+
+ml_pipe.score(train, y)
+
+# TODO get meaningful resultse from Ridge()
+
+ml_pipe.named_steps['ridge'].coef_
+
+from sklearn.model_selection import KFold, cross_val_score
+kf = KFold(n_splits=5, shuffle=True, random_state=123)
+cross_val_score(ml_pipe, train, y, cv=kf)

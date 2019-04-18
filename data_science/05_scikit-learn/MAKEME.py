@@ -75,7 +75,7 @@ hs_train.iloc[0, 0] = np.nan
 hs_transformed = pipe.fit_transform(hs_train)
 hs_transformed.shape
 
-# the fit is not necesarry for the test set. It was done already for the training
+# the fit is not necessary for the test set. It was done already for the training
 # and stored in the pipe
 
 hs_test = test[['HouseStyle']].copy()
