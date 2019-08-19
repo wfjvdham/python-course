@@ -54,13 +54,26 @@ def maximum(x, y):
 
 print(maximum(2, 3))
 
-# mutable vs unmutable
+
+def default_values_print_max(a, b=2):
+    if a > b:
+        print(a, 'is maximum')
+    elif a == b:
+        print(a, 'is equal to', b)
+    else:
+        print(b, 'is maximum')
+
+default_values_print_max()
+default_values_print_max(3)
+default_values_print_max(1)
+default_values_print_max(5, 7)
+
+# mutable vs immutable
 
 
 def changeme(mylist):
     mylist.append([1, 2, 3])
     print("List inside the function: ", mylist)
-    return
 
 
 mylistouter = [10, 20, 30]
@@ -71,7 +84,6 @@ print("List outside the function: ", mylistouter)
 def increaseme(n):
     n = n + 10
     print('Inside the function: ', n)
-    return
 
 
 b = 5
@@ -92,7 +104,7 @@ def sum_of_any(*args):
     if isinstance(args[0], int):      # integer?
         total = 0                     # init to zero
     else:
-        total = args[0][:0]           # use empty slice of arg1
+        total = ""                    # use empty slice of arg1
     for arg in args:
         total += arg
     return total

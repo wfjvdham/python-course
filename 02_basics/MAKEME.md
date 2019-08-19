@@ -20,7 +20,7 @@
     - `a.append(5)`
     - `a.pop()`
     
-1. Create a list like `a = [2, [6, 9], 1]`. Make a copy of the list using the following 3 methods:
+1. Create a list like `a = [2, [6, 9], 1]`. Make a copy of the list using the following 4 methods:
 
     1. `b = a`
     1. `b = a[:]`
