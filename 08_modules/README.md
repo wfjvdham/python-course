@@ -61,7 +61,7 @@ To install dependencies from a file
     
 1. Checking environments
 
-    `conda list`
+    `conda info --envs`
 
 1. Activate environment
 
