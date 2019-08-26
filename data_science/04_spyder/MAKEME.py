@@ -8,17 +8,16 @@ Created on Thu Jan 17 13:47:09 2019
 
 import pandas as pd
 import seaborn as sns
+from os import getcwd
 
-gapminder = pd.read_csv("../datasets/gapminder.csv")
+getcwd()
+gapminder = pd.read_csv("Descargas/python-course/data_science/datasets/gapminder.csv")
 
 # 1. Which country had the highest life expectancy in **1952**?
 
 # 2. Make a plot of the life expectancy (`lifeExp`) vs. population (`pop`) in **1952**.
 
 # 3. In the previous graph, change the color of the country depending on the continent.
-
-# 4. Split the graph into three different groups for different gdp values.
-# What are good values to split on?
 
 # 5. Check if every country has the same number of measurements.
 

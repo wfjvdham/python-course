@@ -21,3 +21,7 @@ File -> New Project...
 For running the current file press: 
 
 <kbd>`Ctrl`</kbd> + <kbd>`Shift`</kbd> + <kbd>`F10`</kbd>
+
+For running the current line press:
+
+<kbd>`ALT`</kbd> + <kbd>`SHIFT`</kbd> + <kbd>`e`</kbd>

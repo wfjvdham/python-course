@@ -1,6 +1,6 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
-from numpy import median
+import numpy as np
 import pandas as pd
 
 diamonds = sns.load_dataset("diamonds")
@@ -38,10 +38,7 @@ plt.show(block=False)
 #  * mean `price`
 #  * median `price`
 
-print(diamonds.groupby('cut')['price'].agg([('min_price', 'min'),
-                                            ('max_price', 'max'),
-                                            ('mean_price', 'mean'),
-                                            ('median_price', 'median')]))
+print(diamonds.groupby('cut')['price'].agg(['min', 'max', 'mean', np.median]))
 
 # 6. Show the median price per cut in a graph
 plt.clf()
