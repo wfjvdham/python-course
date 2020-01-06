@@ -1,0 +1,5 @@
+- Use the tidy version of the datasets from the previous question
+- Calculate the number of days for which we have a measurement per month. And display this in a plot.
+- Show in a graph the average min and max temperature per month
+- Show the percentage of `Don't,know/refused` per religion in a graph.
+- Show in a graph per income group the percentage of persons from the 3 biggest religions
