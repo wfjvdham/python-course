@@ -1,0 +1,3 @@
+- Show the `sched_dep_time` of all the flights per minute. Are some minutes more popular for than others for scheduling a flight?
+- Group the flights based on `dep_time` and the moment of the day (morning, afternoon, evening, night). Show in a graph the relation between `air_time` and part of the day.
+- First convert both `arr_time` and `dep_time` to a `datetime`. Filter the flights that have an `arr_time` that is before `dep_time`. How is this possible? Fix the error.
