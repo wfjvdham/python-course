@@ -20,8 +20,10 @@ alliander
 
 # Installation
 
+- https://github.com/astral-sh/uv
 - Python
-- IDE
+- IDE, VScode
+- Extension for python
 - Copilot / Codium
 
 # IDE
@@ -62,3 +64,6 @@ alliander
 - Polymorphism
 
 # Debugging
+
+- Brrakpoints (conditional)
+- Run and Debug `Ctrl + Shift + D`
