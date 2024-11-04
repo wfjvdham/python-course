@@ -2,12 +2,9 @@
 
 Wim van der Ham
 
-`wfjvdham@gmail.com`
+`mono@fastmail.nl`
 
-Master Human Media Interaction
-
-- R courses
-- KPN *dashboard*
+alliander
 
 # About you?
 
@@ -16,50 +13,52 @@ Master Human Media Interaction
 
 # About the Course
 
+- 9:00 - 16:00, next week?
+- Breaks
 - Flexible
 - Practical
-- [GitHub](https://github.com/wfjvdham/python-course)
-- [References](https://github.com/wfjvdham/python-course/blob/master/references.md)
 
-# Python
+# Installation
 
-> Python is an interpreted, high-level, general-purpose programming language
+- Python
+- IDE
+- Copilot / Codium
 
-- Open source
-- 1990
-- Python 3
-- Dynamically-typed
+# IDE
 
-## Installation
+- Run a script
+- Open a project
 
-- [Miniconda](https://conda.io/miniconda.html)
-- [Anaconda](https://www.anaconda.com/download)
+# Prompt Engineering
 
-# Script files
+**Specificity**: 
+    - Be clear and specific with your instructions.
+    - Longer, more detailed prompts often produce better results.
+    - Delimiters can help the model separate conceptual sections of your prompt. For example, you can surround Python code with triple backticks (```).
 
-- [PyCharm](https://www.jetbrains.com/pycharm/)
-- [Sublime Text](https://www.sublimetext.com/)
-- [Spyder](https://www.spyder-ide.org/) comes with Anaconda
+**Context**: 
+    - Give ample context on what you're trying to achieve and how.
+    - Few-shot prompting means that you're adding examples of your expected output to your prompt, which provides context on what kind of response the model should produce.
 
-```
-python test.py
-```
+**Reasoning**: 
+    - Instruct the model to build complex answers incrementally instead of pushing for immediate answers.
+    - Spelling out the necessary steps for completing the task helps the model correctly do tasks that would otherwise produce incorrect results.
+    - Even without spelling out the steps yourself, you can often improve the results by adding a sentence that asks the model to tackle the challenge step by step.
+    - When asking the model to assess whether a provided input is correct, ask the model to build its own solution first before deciding.
 
-# IPython
+# Structure of a python script
 
-> A command shell for interactive computing
+- Shebang (Optional)
+- Imports
+- Constants
+- Functions or Classes
+- `if __name__ == "__main__":`
 
-```
-ipython
-```
+# Object Oriented Programming (OOP)
 
-`;` at the end of a line means do not show the output
+- Classes and Objects
+- Encapsulation
+- Inheritance
+- Polymorphism
 
-`!` before a command executes that command in the system shell
-
-# Style Guide 
-
-- Never use semicolons
-- Whitespace is important
-
-[PEP8](https://www.python.org/dev/peps/pep-0008/)
+# Debugging
