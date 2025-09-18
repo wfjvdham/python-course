@@ -32,10 +32,6 @@ Pydantic AI is een Python-framework dat de betrouwbaarheid van AI-applicaties ve
 
 ```bash
 uv add pydantic-ai
-# Voor OpenAI support
-uv add pydantic-ai[openai]
-# Voor Anthropic support  
-uv add pydantic-ai[anthropic]
 ```
 
 ### Environment setup
