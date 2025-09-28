@@ -6,4 +6,12 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "pydantic-ai>=1.0.8",
+    # Object Detection dependencies
+    "torch>=2.0.0",
+    "torchvision>=0.15.0", 
+    "transformers>=4.30.0",
+    "opencv-python>=4.8.0",
+    "pillow>=9.0.0",
+    "numpy>=1.21.0",
+    "matplotlib>=3.5.0",
 ]
