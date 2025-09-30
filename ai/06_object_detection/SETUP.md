@@ -2,31 +2,6 @@
 
 ## Quick Start
 
-### 1. Installeer Dependencies
-
-```bash
-# From project root (recommended - uses pyproject.toml)
-pip install -e .
-
-# Or just for this chapter:
-pip install torch torchvision transformers opencv-python pillow numpy matplotlib
-```
-
-### Alternative Lightweight Approaches
-
-Choose based on your needs:
-
-```bash
-# Option 1: Ultralytics YOLO (easiest, fastest setup)
-pip install ultralytics opencv-python
-
-# Option 2: TensorFlow (production-ready)  
-pip install tensorflow tensorflow-hub opencv-python
-
-# Option 3: OpenCV only (minimal dependencies)
-pip install opencv-python numpy
-```
-
 ### 2. Maak Test Content
 
 ```bash

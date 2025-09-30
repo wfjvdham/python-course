@@ -28,32 +28,6 @@ Object detection is een computer vision taak waarbij we:
 | DETR (Detection Transformer) | Zeer accuraat, end-to-end | Langzamer | High-quality detection, research |
 | SSD (Single Shot Detector) | Goede balans snelheid/accuraatheid | Complexere setup | Mobile apps, embedded systems |
 
-## 2. Installatie en setup
-
-### Optie 1: PyTorch + Transformers (standaard, meest flexibel)
-```bash
-# Via pyproject.toml (aanbevolen)
-pip install -e .
-
-# Of direct:
-pip install transformers torch torchvision opencv-python pillow matplotlib numpy
-```
-
-### Optie 2: Ultralytics YOLO (eenvoudigst)
-```bash
-pip install ultralytics opencv-python
-```
-
-### Optie 3: TensorFlow (productie-klaar)
-```bash  
-pip install tensorflow tensorflow-hub opencv-python
-```
-
-### Optie 4: OpenCV DNN (minimale dependencies)
-```bash
-pip install opencv-python numpy
-```
-
 **Waarom PyTorch als standaard?**
 - **Hugging Face ecosysteem**: Grootste collectie pre-trained modellen
 - **Moderne architecturen**: DETR, Vision Transformers
