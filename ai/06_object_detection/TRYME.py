@@ -14,20 +14,22 @@ Gebruik:
 
 import argparse
 import cv2
-import torch
 import numpy as np
+import os
 from PIL import Image, ImageDraw
 import matplotlib.pyplot as plt
 from pathlib import Path
 import time
 
-# Probeer transformers te importeren
+# Probeer transformers en torch te importeren
 try:
+    import torch
     from transformers import DetrImageProcessor, DetrForObjectDetection
     TRANSFORMERS_AVAILABLE = True
 except ImportError:
     TRANSFORMERS_AVAILABLE = False
-    print("⚠️  Transformers niet geïnstalleerd. Installeer met: pip install transformers torch")
+    torch = None
+    print("⚠️  Transformers/PyTorch niet geïnstalleerd. Installeer met: pip install transformers torch")
 
 class SimpleObjectDetector:
     """Eenvoudige object detector met DETR model"""
@@ -42,9 +44,12 @@ class SimpleObjectDetector:
         self.confidence_threshold = confidence_threshold
         
         # GPU ondersteuning
-        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.model.to(self.device)
-        print(f"✅ Model geladen op: {self.device}")
+        if torch is not None:
+            self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+            self.model.to(self.device)
+            print(f"✅ Model geladen op: {self.device}")
+        else:
+            self.device = "cpu"
         
     def detect_objects(self, image):
         """Detecteer objecten in een PIL Image"""
@@ -62,11 +67,20 @@ class SimpleObjectDetector:
             outputs, target_sizes=target_sizes, threshold=self.confidence_threshold
         )[0]
         
-        # Resultaten formatteren
+        # Resultaten formatteren met filtering
         detections = []
+        # Classes to exclude (often confused with furniture)
+        excluded_classes = {"sports ball", "frisbee", "ball"}
+        
         for score, label, box in zip(results["scores"], results["labels"], results["boxes"]):
+            label_name = self.model.config.id2label[label.item()]
+            
+            # Skip excluded classes unless confidence is very high
+            if label_name.lower() in excluded_classes and score.item() < 0.95:
+                continue
+                
             detections.append({
-                "label": self.model.config.id2label[label.item()],
+                "label": label_name,
                 "confidence": score.item(),
                 "box": box.cpu().numpy().astype(int)  # [x_min, y_min, x_max, y_max]
             })
@@ -131,7 +145,10 @@ def process_image(image_path, detector, save_result=False):
     result_image = draw_detections_pil(image.copy(), detections)
     
     if save_result:
-        output_path = Path(image_path).stem + "_detected.jpg"
+        # Get the directory where this script is located
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        output_filename = Path(image_path).stem + "_detected.jpg"
+        output_path = os.path.join(script_dir, output_filename)
         result_image.save(output_path)
         print(f"💾 Resultaat opgeslagen: {output_path}")
     
@@ -252,7 +269,11 @@ def process_video(video_path, detector, output_path=None):
                 # Statistieken bijhouden
                 for detection in detections:
                     label = detection["label"]
-                    detection_stats[label] = detection_stats.get(label, 0) + 1
+                    confidence = detection["confidence"]
+                    if label not in detection_stats:
+                        detection_stats[label] = {"count": 0, "confidences": []}
+                    detection_stats[label]["count"] += 1
+                    detection_stats[label]["confidences"].append(confidence)
                 
                 # Tekenen op frame
                 frame = draw_detections_cv2(frame, detections)
@@ -276,8 +297,13 @@ def process_video(video_path, detector, output_path=None):
     
     # Statistieken printen
     print(f"\n📈 Detectie statistieken:")
-    for label, count in sorted(detection_stats.items(), key=lambda x: x[1], reverse=True):
-        print(f"  {label}: {count} detecties")
+    for label, stats in sorted(detection_stats.items(), key=lambda x: x[1]["count"], reverse=True):
+        count = stats["count"]
+        confidences = stats["confidences"]
+        avg_conf = sum(confidences) / len(confidences)
+        min_conf = min(confidences)
+        max_conf = max(confidences)
+        print(f"  {label}: {count} detecties (avg: {avg_conf:.3f}, min: {min_conf:.3f}, max: {max_conf:.3f})")
 
 def create_sample_video_with_chair():
     """Maak een eenvoudige test video met een stoel (placeholder)"""
@@ -308,7 +334,7 @@ def create_sample_video_with_chair():
 
 def main():
     parser = argparse.ArgumentParser(description="Object Detection Demo")
-    parser.add_argument("--input", required=True, 
+    parser.add_argument("--input",  
                        help="Input: 'webcam', image path, of video path")
     parser.add_argument("--output", 
                        help="Output video pad (alleen voor video input)")
@@ -324,6 +350,12 @@ def main():
     # Sample video maken
     if args.create_sample:
         create_sample_video_with_chair()
+        return
+    
+    # Check if input is provided when not creating sample
+    if not args.input:
+        print("❌ --input is verplicht wanneer --create-sample niet wordt gebruikt")
+        parser.print_help()
         return
     
     # Check of transformers beschikbaar is

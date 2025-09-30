@@ -53,6 +53,16 @@ alist = [3, 5, 9]
 add_10_list(alist)
 print(alist)
 
+def plak_lijsten_problematisch(lijst1, lijst2=[1]):
+    lijst2.append(999)
+    
+    gecombineerde_lijst = lijst1 + lijst2
+    return gecombineerde_lijst
+
+result1 = plak_lijsten_problematisch([1, 2, 3])
+result2 = plak_lijsten_problematisch([4, 5])
+result3 = plak_lijsten_problematisch([6, 7])
+
 capitals = {
     'France': 'Paris',
     'Belgium': 'Brussels',

@@ -36,3 +36,4 @@
 
 1. Create a dictionary with some countries and their capitals.
 1. Write a loop that creates a dictionary with as keys the numbers 1 till 10. And as values the key to the power 2.
+1. For a more comprehensive dictionary exercise, see `dictionary_exercise.md`
